@@ -20,7 +20,7 @@ function Navigation() {
         <NavWrapper>
             <Nav>
                 <NavButton href="/plan-dniowy" name="Plan dniowy" />
-                <NavButton href="/plan-dniowy" name="Plan tygodniowy" />
+                <NavButton href="/plan-tygodniowy" name="Plan tygodniowy" />
             </Nav>
         </NavWrapper>
     )
