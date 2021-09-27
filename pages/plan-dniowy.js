@@ -18,12 +18,6 @@ function DailyPlan({ data }) {
     return (
         <StyledMain>
             <ScheduleTable data={data} type="day" />
-            <div>
-                <img
-                    src="../assets/Double Ring-1s-200px.svg"
-                    alt="spinner animation"
-                />
-            </div>
         </StyledMain>
     )
 }
