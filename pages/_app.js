@@ -1,7 +1,7 @@
 import Router from 'next/router'
 import React from 'react'
+import Spinner from '../assets/Spinner'
 import Page from '../components/Page'
-import Spinner from '../components/Spinner'
 export default function _app({ Component, pageProps }) {
     const [loading, setLoading] = React.useState(false)
     React.useEffect(() => {
