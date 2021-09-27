@@ -1,12 +1,9 @@
-import styled from "styled-components";
-const Navigation = styled.nav``;
-
+import Navigation from '../components/Navigation'
 export default function Home() {
-  return (
-    <>
-      <title>Plan szkolny</title>
-      <main></main>
-      <footer></footer>
-    </>
-  );
+    return (
+        <>
+            <title>Plan szkolny</title>
+            <Navigation />
+        </>
+    )
 }
