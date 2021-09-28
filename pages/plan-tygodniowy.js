@@ -5,6 +5,7 @@ const StyledMain = styled.main`
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-flow: wrap row;
 `
 export async function getServerSideProps() {
     const req = await fetch(
@@ -27,7 +28,9 @@ export async function getServerSideProps() {
 function WeekPlan({ data }) {
     return (
         <StyledMain>
-            <ScheduleTable data={data} type="week" />
+            {data.map((ele, i) => (
+                <ScheduleTable data={ele} type="week" index={i} />
+            ))}
         </StyledMain>
     )
 }

@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import hours from '../utils/hours'
+import days from '../utils/days'
 const StyledColumn = styled.div`
-    width: 460px;
+    width: ${(props) => (props.type === 'day' ? '460px' : '400px')};
     border: 1px solid #474c50;
+    margin: 15px 10px;
     @media only screen and (max-width: 700px) {
         width: 90%;
     }
@@ -12,6 +14,9 @@ const StyledColumn = styled.div`
             font-size: 13px;
         }
         width: 100%;
+    }
+    h2 {
+        text-align: center;
     }
 `
 const StyledColumnCell = styled.div`
@@ -37,11 +42,11 @@ const StyledHours = styled.div`
         margin: 0;
     }
 `
-function ScheduleTable({ data, type }) {
-    console.log(data)
+function ScheduleTable({ data, type, index }) {
     return (
         <>
             <StyledColumn>
+                <h2>{days[index]}</h2>
                 {data.map((ele, i) => (
                     <StyledColumnCell>
                         <StyledHours>
