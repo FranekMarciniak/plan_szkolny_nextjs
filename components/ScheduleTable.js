@@ -46,7 +46,7 @@ function ScheduleTable({ data, type, index }) {
     return (
         <>
             <StyledColumn>
-                <h2>{days[index]}</h2>
+                <h2>{index ? days[index] : 'dziś'}</h2>
                 {data.map((ele, i) => (
                     <StyledColumnCell>
                         <StyledHours>

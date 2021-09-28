@@ -1,10 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 import Footer from './Footer'
 const GlobalStyles = createGlobalStyle`
+
+
   body {
   background-color: #2f3437;
   color: #fff;
-    height: 100vh;
     width: 100vw;    
     padding: 0;
     margin: 0;
