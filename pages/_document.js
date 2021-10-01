@@ -25,10 +25,14 @@ export default class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap"
                         rel="stylesheet"
                     />
-                    <script
-                        async
-                        src="https://www.googletagmanager.com/gtag/js?id=G-5CCSVQN388"
-                    ></script>
+             <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CCSVQN388"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5CCSVQN388');
+</script>
                     {this.props.styleTags}
                 </Head>
                 <body>
