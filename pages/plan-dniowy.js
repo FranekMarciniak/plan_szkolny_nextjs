@@ -7,17 +7,29 @@ const StyledMain = styled.main`
     justify-content: center;
 `
 export async function getServerSideProps() {
-    const req = await fetch('https://sleepy-peak-69154.herokuapp.com/dayplan', {
-        method: 'get',
-    })
-    const data = await req.json()
-    return { props: { data } }
+    try {
+        const req = await fetch(
+            'https://sleepy-peak-69154.herokuapp.com/dayplan',
+            {
+                method: 'get',
+            }
+        )
+        const data = await req.json()
+        return { props: { data } }
+    } catch (err) {
+        console.log(err)
+        return { props: { data: null } }
+    }
 }
 
 function DailyPlan({ data }) {
     return (
         <StyledMain>
-            <ScheduleTable data={data} type="day" />
+            {data ? (
+                <ScheduleTable data={data} type="day" />
+            ) : (
+                <h1>Api error</h1>
+            )}
         </StyledMain>
     )
 }

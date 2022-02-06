@@ -8,29 +8,38 @@ const StyledMain = styled.main`
     flex-flow: wrap row;
 `
 export async function getServerSideProps() {
-    const req = await fetch(
-        'https://sleepy-peak-69154.herokuapp.com/weekplan',
-        {
-            method: 'get',
-        }
-    )
-    const { table } = await req.json()
-    const formatedData = [
-        table.Monday,
-        table.Tuesday,
-        table.Wednesday,
-        table.Thursday,
-        table.Friday,
-    ]
-    return { props: { data: formatedData } }
+    try {
+        const req = await fetch(
+            'https://sleepy-peak-69154.herokuapp.com/weekplan',
+            {
+                method: 'get',
+            }
+        )
+        const { table } = await req.json()
+        const formatedData = [
+            table.Monday,
+            table.Tuesday,
+            table.Wednesday,
+            table.Thursday,
+            table.Friday,
+        ]
+        return { props: { data: formatedData } }
+    } catch (err) {
+        console.log(err)
+        return { props: { data: null } }
+    }
 }
 
 function WeekPlan({ data }) {
     return (
         <StyledMain>
-            {data.map((ele, i) => (
-                <ScheduleTable data={ele} type="week" index={i} />
-            ))}
+            {data ? (
+                data.map((ele, i) => (
+                    <ScheduleTable data={ele} type="week" index={i} />
+                ))
+            ) : (
+                <h1>Api error</h1>
+            )}
         </StyledMain>
     )
 }
