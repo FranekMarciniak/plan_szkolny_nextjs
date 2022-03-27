@@ -38,7 +38,7 @@ function WeekPlan({ data }) {
                     <ScheduleTable data={ele} type="week" index={i} />
                 ))
             ) : (
-                <h1>Api error</h1>
+                <h1>Skończył się transfer na serwerze, niedługo zacznie działać!</h1>
             )}
         </StyledMain>
     )
