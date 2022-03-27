@@ -28,7 +28,7 @@ function DailyPlan({ data }) {
             {data ? (
                 <ScheduleTable data={data} type="day" />
             ) : (
-                <h1>Api error</h1>
+                <h1>Skończył się transfer na serwerze, niedługo zacznie działać!</h1>
             )}
         </StyledMain>
     )
